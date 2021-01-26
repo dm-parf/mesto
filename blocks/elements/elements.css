@@ -1,0 +1,10 @@
+.elements{
+    padding: 0 200px 68px;
+    transition: margin 0.5s ease;
+}
+
+@media screen and (max-width: 767px){
+    .elements {
+        padding: 0 19px 48px;
+    }
+  }

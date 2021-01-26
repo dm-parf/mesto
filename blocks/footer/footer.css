@@ -1,0 +1,12 @@
+.footer{
+    padding: 0 200px 60px;
+    transition: margin 0.5s ease;
+}
+
+
+@media screen and (max-width: 767px){
+    .footer {
+        flex-direction: column;
+        padding: 0 19px 36px;
+    }
+  }

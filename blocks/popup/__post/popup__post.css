@@ -1,0 +1,16 @@
+.popup__post{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    margin: 24px 35px 0;
+    outline-style: none;
+}
+
+@media screen and (max-width: 767px){
+    .popup__post {
+        margin: 22px 21px 0;
+    }
+  }

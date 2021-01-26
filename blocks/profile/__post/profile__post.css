@@ -1,0 +1,18 @@
+.profile__post{
+    margin: 0 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin: 8px 0 0;
+}
+
+@media screen and (max-width: 767px){
+    .profile__post {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        margin-top: 8px;
+        }
+  }

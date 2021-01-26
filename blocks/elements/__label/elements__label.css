@@ -1,0 +1,7 @@
+.elements__label{
+    display: flex;
+    flex: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 25px 17px 25px 21px;
+}
