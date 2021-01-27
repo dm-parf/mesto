@@ -1,5 +1,5 @@
 .header {
-    padding: 45px 200px 0;
+    margin: 45px 200px 0;
     background-color: #000000;
     transition: margin 0.5s ease;
     display: flex;
@@ -11,6 +11,6 @@
 
   @media screen and (max-width: 767px){
     .header {
-      padding: 28px 0 0;
+      margin: 28px 0 0;
     }
   }
