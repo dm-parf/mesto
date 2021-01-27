@@ -12,7 +12,6 @@
   <body class="page">
       <header class="header">
         <img src = "./images/logo/header-logo.svg" alt="Логотип Россия" class="header__logo">
-        <hr class="header__line">
       </header>
       <main class="content">
         <section class="profile">
@@ -21,55 +20,55 @@
             <div class="profile__info">
               <h1 class="profile__header">
                 <span class ="profile__name">Жак-Ив Кусто</span>
-                <button class="profile__button profile__button_type_edit"></button>
+                <button class="profile__button profile__button_type_edit" type="button"></button>
               </h1>
               <p class="profile__post">Исследователь океана</p>
             </div>
           </div>
-          <button class="profile__button profile__button_type_add"></button>
+          <button class="profile__button profile__button_type_add" type="button"></button>
         </section>
         <section class="elements">
           <ul class="elements__list">
             <li class="elements__block">
               <img class="elements__image" src="./images/altay.jpg" alt="Горный Алтай">
               <div class="elements__label">
-                <p class="elements__name">Алтай</p>
-                <button class="elements__like"></button>
+                <h2 class="elements__name">Алтай</h2>
+                <button class="elements__like" type="button"></button>
               </div>
             </li>
             <li class="elements__block">
               <img class="elements__image" src="./images/balaklava.jpg" alt="Крым Балаклава">
               <div class="elements__label">
-                <p class="elements__name">Крым</p>
-                <button class="elements__like"></button>
+                <h2 class="elements__name">Крым</h2>
+                <button class="elements__like" type="button"></button>
               </div>
             </li>
             <li class="elements__block">
               <img class="elements__image" src="./images/cherkes.jpg" alt="Карачаево-Черкесия">
               <div class="elements__label">
-                <p class="elements__name">Карачаево-Черкесия</p>
-                <button class="elements__like"></button>
+                <h2 class="elements__name">Карачаево-Черкесия</h2>
+                <button class="elements__like" type="button"></button>
               </div>
             </li>
             <li class="elements__block">
               <img class="elements__image" src="./images/dombay.jpg" alt="Горы Домбай">
               <div class="elements__label">
-                <p class="elements__name">Домбай</p>
-                <button class="elements__like"></button>
+                <h2 class="elements__name">Домбай</h2>
+                <button class="elements__like" type="button"></button>
               </div>
             </li>
             <li class="elements__block">
               <img class="elements__image" src="./images/polyana.jpg" alt="Горы Красная поляна Сочи">
               <div class="elements__label">
-                <p class="elements__name">Красная Поляна</p>
-                <button class="elements__like"></button>
+                <h2 class="elements__name">Красная Поляна</h2>
+                <button class="elements__like" type="button"></button>
               </div>
             </li>
             <li class="elements__block">
               <img class="elements__image" src="./images/valday.jpg" alt="хвойный лес Валдай">
               <div class="elements__label">
-                <p class="elements__name">Валдай</p>
-                <button class="elements__like"></button>
+                <h2 class="elements__name">Валдай</h2>
+                <button class="elements__like" type="button"></button>
               </div>
             </li>
           </ul>
@@ -79,13 +78,11 @@
         <p class="footer__author">&copy; 2021 Mesto Russia</p>
       </footer>
       <section class="popup">
-        <form class="popup__container">
+        <form class="popup__container" name="popup-edit">
           <button class="popup__close" type="button"></button>
-          <h1 class="popup__header">Редактировать профиль</h1>
-          <input class="popup__name" placeholder="Имя" type="text" required>
-          <hr class="popup__line">
-          <input class="popup__post" placeholder="О себе" type="text" required>
-          <hr class="popup__line">
+          <h2 class="popup__header">Редактировать профиль</h2>
+          <input class="popup__input popup__input_type_name" placeholder="Имя" type="text" name="user-name" required>
+          <input class="popup__input popup__input_type_post" placeholder="О себе" type="text" name="user-post" required>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
       </section>

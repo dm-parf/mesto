@@ -10,6 +10,7 @@
     background-color: black;
     border: none;
     outline-style: none;
+    cursor: pointer;
     transition: opacity 1s linear;
 }
 

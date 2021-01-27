@@ -5,6 +5,7 @@
     background-position: center;
     outline-style: none;
     transition: opacity 1s linear;
+    cursor: pointer;
 }
 
 .profile__button:hover{

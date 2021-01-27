@@ -12,6 +12,7 @@
     top: -45px;
     background-color: transparent;
     outline-style: none;
+    cursor: pointer;
     transition: opacity 1s linear;
 }
 
