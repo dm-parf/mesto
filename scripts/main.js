@@ -25,7 +25,7 @@ const blocksContainer = document.querySelector('.elements__list');
 const initialCards = [
     {
       name: 'Алтай',
-      link: '../images/altay.jpg'
+      link: './images/altay.jpg'
     },
     {
       name: 'Челябинская область',
@@ -33,7 +33,7 @@ const initialCards = [
     },
     {
       name: 'Валдай',
-      link: '../images/valday.jpg'
+      link: './images/valday.jpg'
     },
     {
       name: 'Камчатка',
@@ -45,7 +45,7 @@ const initialCards = [
     },
     {
       name: 'Красная поляна',
-      link: '../images/polyana.jpg'
+      link: './images/polyana.jpg'
     }
   ]; 
 
