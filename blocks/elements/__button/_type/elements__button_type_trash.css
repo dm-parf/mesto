@@ -1,0 +1,12 @@
+.elements__button_type_trash{
+    min-width: 18px;
+    min-height: 19.3px;
+    background-image: url(../../../../images/trash.svg);
+    position: absolute;
+    top: 18px;
+    right: 15px;
+}
+
+.elements__button_type_trash:hover{
+    opacity: 0.6;
+}

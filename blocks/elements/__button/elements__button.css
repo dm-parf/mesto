@@ -1,0 +1,11 @@
+.elements__button{
+    border: none;
+    background-color: transparent;
+    padding: 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline-style: none;
+    cursor: pointer;
+    transition: opacity 1s linear;
+}
+

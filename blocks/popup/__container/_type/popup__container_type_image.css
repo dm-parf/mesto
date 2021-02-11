@@ -1,0 +1,8 @@
+.popup__container_type_image{
+    border: none;
+    background-color: transparent;
+    padding: 0 0;
+    outline-style: none;
+    border-radius: 0;
+    width: auto;
+}

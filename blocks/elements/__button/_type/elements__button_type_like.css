@@ -1,0 +1,9 @@
+.elements__button_type_like{
+    min-width: 29px;
+    min-height: 19px;
+    background-image: url(../../../../images/like.svg);
+}
+
+.elements__button_type_like:hover{
+    opacity: 0.5;
+}
