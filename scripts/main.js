@@ -4,21 +4,21 @@ const profileName = document.querySelector('.profile__name');
 const profilePost = document.querySelector('.profile__post');
 
 const popupEdit = document.querySelector('.popup_type_edit');
-let popupCloseBtn = popupEdit.querySelector('.popup__close');
-let popupEditContainer = popupEdit.querySelector('.popup__container');
-let nameInput = popupEdit.querySelector('.popup__input_type_name');
-let jobInput = popupEdit.querySelector('.popup__input_type_post');
+const popupCloseBtn = popupEdit.querySelector('.popup__close');
+const popupEditContainer = popupEdit.querySelector('.popup__container');
+const nameInput = popupEdit.querySelector('.popup__input_type_name');
+const jobInput = popupEdit.querySelector('.popup__input_type_post');
 addPopupListener(popupEdit);
 const popupAdd = document.querySelector('.popup_type_add');
-let popupAddCloseBtn = popupAdd.querySelector('.popup__close');
-let popupAddContainer = popupAdd.querySelector('.popup__container');
-let nameAddInput = popupAdd.querySelector('.popup__input_type_name');
-let linkInput = popupAdd.querySelector('.popup__input_type_post');
+const popupAddCloseBtn = popupAdd.querySelector('.popup__close');
+const popupAddContainer = popupAdd.querySelector('.popup__container');
+const nameAddInput = popupAdd.querySelector('.popup__input_type_name');
+const linkInput = popupAdd.querySelector('.popup__input_type_post');
 addPopupListener(popupAdd);
 const popupImage = document.querySelector('.popup_type_image');
-let popupImageCloseBtn = popupImage.querySelector('.popup__close');
-let popupImageImg = popupImage.querySelector('.popup__image');
-let popupImageCaption = popupImage.querySelector('.popup__caption');
+const popupImageCloseBtn = popupImage.querySelector('.popup__close');
+const popupImageImg = popupImage.querySelector('.popup__image');
+const popupImageCaption = popupImage.querySelector('.popup__caption');
 addPopupListener(popupImage);
 const blocksContainer = document.querySelector('.elements__list');
 
@@ -64,22 +64,29 @@ function toggleListener(elem, popup){
   });
 }
 
+function createCard(nameValue, linkValue)
+{
+  const blockTemplate = document.querySelector('#block-template').content;
+  const blockElement = blockTemplate.querySelector('.elements__block').cloneNode(true);
+  const imageElement = blockElement.querySelector('.elements__image');
+  const likeBtn = blockElement.querySelector('.elements__button_type_like');
+  const trashBtn = blockElement.querySelector('.elements__button_type_trash');
+  const nameElement = blockElement.querySelector('.elements__name');
+
+  imageElement.src = linkValue;
+  imageElement.alt = nameValue;
+  nameElement.textContent = nameValue;
+
+  likeBtn.addEventListener('click', likeBtnClickHandler);
+  trashBtn.addEventListener('click', trashBtnClickHandler);
+  imageElement.addEventListener('click', () => {
+    imageElementClickHandler(nameValue, linkValue)
+  });
+  return blockElement;
+}
+
 function addBlock(nameValue, linkValue) {
-    const blockTemplate = document.querySelector('#block-template').content;
-    const blockElement = blockTemplate.querySelector('.elements__block').cloneNode(true);
-  
-    blockElement.querySelector('.elements__image').src = linkValue;
-    blockElement.querySelector('.elements__image').alt = nameValue;
-    blockElement.querySelector('.elements__name').textContent = nameValue;
-
-    const likeBtns = blockElement.querySelector('.elements__button_type_like');
-    const trashBtns = blockElement.querySelector('.elements__button_type_trash');
-    const imageElements = blockElement.querySelector('.elements__image');
-
-    likeBtns.addEventListener('click', likeBtnClickHandler);
-    trashBtns.addEventListener('click', trashBtnClickHandler);
-    imageElements.addEventListener('click', imageElementsClickHandler);
-
+    const blockElement = createCard(nameValue, linkValue);
     blocksContainer.prepend(blockElement); 
   }
 
@@ -102,12 +109,10 @@ function popupAddSubmitHandler (evt) {
     
     togglePopup(popupAdd);
 }
-function imageElementsClickHandler (evt) {
-  const parentBlock = evt.target.closest('.elements__block');
-  let elementName = parentBlock.querySelector('.elements__name').innerHTML;
-  popupImageImg.src = evt.target.src;
-  popupImageImg.alt = elementName;
-  popupImageCaption.innerHTML = elementName;
+function imageElementClickHandler(nameValue, linkValue) {
+  popupImageImg.src = linkValue;
+  popupImageImg.alt = nameValue;
+  popupImageCaption.textContent = nameValue;
   togglePopup(popupImage); 
 }
 
