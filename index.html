@@ -33,20 +33,32 @@
         <p class="footer__author">&copy; 2021 Mesto Russia</p>
       </footer>
       <section class="popup popup_type_edit">
-        <form class="popup__container" name="popup-edit">
+        <form class="popup__container popup__container_type_form" name="popup-edit" novalidate>
           <button class="popup__close" type="button"></button>
           <h2 class="popup__header">Редактировать профиль</h2>
-          <input class="popup__input popup__input_type_name" placeholder="Имя" type="text" name="user-name" required>
-          <input class="popup__input popup__input_type_post" placeholder="О себе" type="text" name="user-post" required>
+          <label class="popup__field">
+            <input class="popup__input popup__input_type_name" id = 'edit-name-input' placeholder="Имя" type="text" name="user-name" minlength="2" maxlength="40" required>
+            <span class="popup__error edit-name-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input class="popup__input popup__input_type_post" id = 'edit-post-input' placeholder="О себе" type="text" name="user-post" minlength="2" maxlength="200" required>
+            <span class="popup__error edit-post-input-error"></span>
+          </label>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
       </section>
       <section class="popup popup_type_add">
-        <form class="popup__container" name="popup-add">
+        <form class="popup__container popup__container_type_form" name="popup-add">
           <button class="popup__close" type="button"></button>
           <h2 class="popup__header">Новое место</h2>
-          <input class="popup__input popup__input_type_name" placeholder="Название" type="text" name="user-name" required>
-          <input class="popup__input popup__input_type_post" placeholder="Ссылка на картинку" type="text" name="user-post" required>
+          <label class="popup__field">
+            <input class="popup__input popup__input_type_name" id = 'add-name-input' placeholder="Название" type="text" name="user-name" minlength="2" maxlength="30" required>
+            <span class="popup__error add-name-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input class="popup__input popup__input_type_post" id = 'add-post-input' placeholder="Ссылка на картинку" type="url" name="user-post" required>
+            <span class="popup__error add-post-input-error"></span>
+          </label>
           <button class="popup__submit" type="submit">Создать</button>
         </form>
       </section>
@@ -67,6 +79,7 @@
           </div>
         </li>
       </template>
+      <script src="./scripts/validate.js"></script>
       <script src="./scripts/main.js"></script>
   </body>
 </html>
