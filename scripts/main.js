@@ -93,33 +93,32 @@ function addBlock(nameValue, linkValue) {
   }
 
 function togglePopup(popupElement, callback = () => {}){
-    document.removeEventListener('keydown',keyHandler);
     callback();
-    popupElement.classList.toggle('popup_opened')
+    popupElement.classList.toggle('popup_opened');
+    if (popupElement.classList.contains('popup_opened')) { 
+      document.addEventListener('keydown',keyHandler);
+   } else {
+     document.removeEventListener('keydown',keyHandler); 
+   }
 }
 
 function popupEditSubmitHandler (evt) {
-    evt.preventDefault(); 
-    if (!hasInvalidInput(Array.from(popupEdit.querySelectorAll(options.inputSelector)))) {
+      evt.preventDefault(); 
       profileName.textContent = nameInput.value;
       profilePost.textContent = jobInput.value;
       togglePopup(popupEdit);
-    }
 }
 function popupAddSubmitHandler (evt) {
-    evt.preventDefault();
-    if (!hasInvalidInput(Array.from(popupAdd.querySelectorAll(options.inputSelector)))) {
+      evt.preventDefault();
       addBlock(nameAddInput.value, linkInput.value);
       clearPopupAddInputs();
       togglePopup(popupAdd);
-    }
 }
 function imageElementClickHandler(nameValue, linkValue) {
   popupImageImg.src = linkValue;
   popupImageImg.alt = nameValue;
   popupImageCaption.textContent = nameValue;
   togglePopup(popupImage);
-  document.addEventListener('keydown',keyHandler);
   document.popupParam = popupImage;
 }
 
@@ -142,14 +141,12 @@ popupEditBtn.addEventListener('click', function () {
     toggleButtonState([nameInput, jobInput], submitEdit, options.inactiveButtonClass);
     
     togglePopup(popupEdit);
-    document.addEventListener('keydown',keyHandler);
     document.popupParam = popupEdit;
   });  
 
 toggleListener(popupAddBtn, popupAdd, () => {
   
   toggleButtonState([nameAddInput, linkInput], submitAdd, options.inactiveButtonClass);
-  document.addEventListener('keydown',keyHandler);
   document.popupParam = popupAdd;
 });
 toggleListener(popupCloseBtn, popupEdit, ()=> {
@@ -168,7 +165,7 @@ popupAddContainer.addEventListener('submit', popupAddSubmitHandler);
 
 function keyHandler(evt){
   if(evt.key==='Escape'){
-    togglePopup(evt.currentTarget.popupParam);
+    togglePopup(document.popupParam);
   }
 }
 
